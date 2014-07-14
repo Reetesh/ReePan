@@ -151,22 +151,32 @@ class Presenter:
 			line = string.replace(line, '@album-description@', '')
 			line = string.replace(line, '@web-pic@',           self.formatWebPic(pic))
 			line = string.replace(line, '@comment@',           pic.getComment())
+			line = string.replace(line, '@page-type@', 'Picture' )
+			line = string.replace(line, '@fb-url@',    "index.cgi?album=%s&pic=%s" %(album.getLinkPath(),pic.getFileName()))
+
 
 		elif albumDescription != '': 
 			line = string.replace(line, '@album-description@', albumDescription)
 			line = string.replace(line, '@web-pic@',           '')
 			line = string.replace(line, '@comment@',           '')
+			line = string.replace(line, '@page-type@', 'Album')
+			line = string.replace(line, '@fb-url@',    'index.cgi?album=%s' %(album.getLinkPath()))
 
 		else:
 			if album.getNumPics() > 0:
 				firstPic = album.getPics()[0].getFileName()
 				pic = Pic('%s%s%s' % (currDir, os.sep, firstPic))
+				line = string.replace(line, '@page-type@', 'Album')
+				line = string.replace(line, '@fb-url@', 'index.cgi?album=%s' %(album.getLinkPath()))
 			else:
 				pic = Pic('')
 
 			line = string.replace(line, '@album-description@', '')
 			line = string.replace(line, '@web-pic@', self.formatWebPic(pic))
 			line = string.replace(line, '@comment@', pic.getComment())
+
+		line = string.replace(line, '@page-type@', 'Site')
+		line = string.replace(line, '@fb-url@', '' )
 
 		return line
 

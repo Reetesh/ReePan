@@ -4,7 +4,7 @@ import sys, os, string
 
 # if this is false we try to use ImageMagick
 # if you set it to true we try to import and use PIL
-USE_PIL = 0 
+USE_PIL = 1 
 
 if (USE_PIL):
 	try:

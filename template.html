@@ -1,12 +1,21 @@
 <html>
 	<head>
-		<title>pix @title@</title>
+		<title>ReePan @title@</title>
 		<link rel="stylesheet" href="style.css" type="text/css"/>
 	</head>
 	<body>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=262462997277447&version=v2.0";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
 		<table cellpadding="0" cellspacing="0" border="0">
 			<tr><td colspan="2">
-				<h1><a href="index.cgi">pix</a> @breadcrumb@</h1>
+				<h1><a href="index.cgi">ReePan</a> @breadcrumb@</h1>
 				</td></tr>
 			<tr>
 				<td>
@@ -17,7 +26,10 @@
 					<font size="-1"><div align="right"><b>@control@</b></div></font>
 					<table cellpadding="0" cellspacing="0" border="0" >
 						<tr><td>@web-pic@</td></tr>
+						<tr><td><div class="fb-like" data-href="http://reepan.v3r.us/@fb-url@" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div></td></tr>
 						<tr><td>@comment@</td></tr>
+						<tr><td>@page-type@ Comments</tr></td>
+						<tr><td><div class="fb-comments" data-href="http://reepan.v3r.us/@fb-url@" data-width="500" data-numposts="5" data-colorscheme="light"></div><td></tr>
 					</table>
 					@album-description@
 				</td>
