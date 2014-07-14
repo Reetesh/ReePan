@@ -153,6 +153,7 @@ class Presenter:
 			line = string.replace(line, '@comment@',           pic.getComment())
 			line = string.replace(line, '@page-type@', 'Picture' )
 			line = string.replace(line, '@fb-url@',    "index.cgi?album=%s&pic=%s" %(album.getLinkPath(),pic.getFileName()))
+			line = string.replace(line, '@pic-url@',   "album/%s/%s" %( album.getLinkPath(), pic.getFileName()))
 
 
 		elif albumDescription != '': 
@@ -174,6 +175,7 @@ class Presenter:
 			line = string.replace(line, '@album-description@', '')
 			line = string.replace(line, '@web-pic@', self.formatWebPic(pic))
 			line = string.replace(line, '@comment@', pic.getComment())
+			line = string.replace(line, '@pic-url@',   "album/%s/%s" %( album.getLinkPath(), pic.getFileName()))
 
 		line = string.replace(line, '@page-type@', 'Site')
 		line = string.replace(line, '@fb-url@', '' )

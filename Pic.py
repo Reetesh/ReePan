@@ -51,7 +51,7 @@ class Pic:
 
 
 	def getWeb(self):
-		return self.getResized(self.getResizedPicPath('web'), 500, 400)
+		return self.getResized(self.getResizedPicPath('web'), 1024, 768 )
 
 
 	def getThumb(self):

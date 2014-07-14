@@ -1,0 +1,7 @@
+User-agent: *
+Crawl-delay: 10
+Disallow: /*album*/
+Disallow: /album/
+Disallow: /*.JPG$
+Disallow: /*.jpg$
+Disallow: /*.zip$
